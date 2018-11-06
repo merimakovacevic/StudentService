@@ -1,0 +1,40 @@
+body{
+	background-color: #1873bc;
+}
+
+#login{
+	height: 120px;
+    width: 230px;
+    padding: 40px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    left: 0;
+    margin: auto;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+}
+
+
+.dugme{
+	width: 90px;
+}
+
+.input-forme:not(:last-child){
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.input-forme label{
+	position: relative;
+	margin-right: 2px;
+}
+
+.button-forme{
+	margin-top: auto;
+    text-align: right;
+    margin-right: 20px;
+}

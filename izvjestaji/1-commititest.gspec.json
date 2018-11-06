@@ -1,0 +1,148 @@
+{
+  "testId" : "1-commititest.gspec",
+  "name" : "commititest.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Simple check",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  commititest.gspec --url http://localhost/commiti.html --size 1024x768 --htmlreport izvjestaji",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: commititest.gspec included tags: ",
+          "status" : "info",
+          "time" : 1541538068510,
+          "sections" : [ {
+            "name" : "Header",
+            "place" : {
+              "filePath" : "commititest.gspec",
+              "lineNumber" : 11
+            },
+            "objects" : [ {
+              "name" : "header.logo",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "commititest.gspec",
+                  "lineNumber" : 13
+                },
+                "name" : "above header.meni",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "header.logo",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "header.meni",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "21px"
+                } ],
+                "highlight" : [ "header.logo", "header.meni" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "commititest.gspec",
+                  "lineNumber" : 14
+                },
+                "name" : "inside header 10px left, 10px top",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "header.logo",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "header",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : "10px",
+                  "realDistance" : "10px"
+                }, {
+                  "from" : {
+                    "object" : "header.logo",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "header",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "10px",
+                  "realDistance" : "10px"
+                } ],
+                "highlight" : [ "header.logo", "header" ]
+              } ]
+            }, {
+              "name" : "header.naslov",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "commititest.gspec",
+                  "lineNumber" : 17
+                },
+                "name" : "text is \"Pregled commita\"",
+                "highlight" : [ "header.naslov" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Sredina",
+            "place" : {
+              "filePath" : "commititest.gspec",
+              "lineNumber" : 21
+            },
+            "objects" : [ {
+              "name" : "sredina.tabela",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "commititest.gspec",
+                  "lineNumber" : 23
+                },
+                "name" : "below sredina.tekst 40px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "sredina.tabela",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "sredina.tekst",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "40px",
+                  "realDistance" : "40px"
+                } ],
+                "highlight" : [ "sredina.tabela", "sredina.tekst" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "sredina.tabela" : {
+              "area" : [ 40, 315, 497, 300 ]
+            },
+            "header.logo" : {
+              "area" : [ 10, 10, 36, 40 ]
+            },
+            "header" : {
+              "area" : [ 0, 0, 994, 100 ]
+            },
+            "sredina.tekst" : {
+              "area" : [ 0, 100, 994, 175 ]
+            },
+            "header.meni" : {
+              "area" : [ 10, 71, 974, 18 ]
+            },
+            "header.naslov" : {
+              "area" : [ 652, 15, 322, 46 ]
+            }
+          },
+          "screenshot" : "layout-1-screenshot.png",
+          "type" : "layout"
+        } ],
+        "time" : 1541538065898,
+        "type" : "node"
+      } ],
+      "time" : 1541538060933,
+      "type" : "node"
+    } ]
+  }
+}

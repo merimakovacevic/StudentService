@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>addStudent</title>
+	<link rel="stylesheet" type="text/css" href="addStudent.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<div id="sadrzaj">
+		<div id="header">
+			<div >
+				<div id="logo">
+					<img src="ikona.png" alt="Logo">
+				</div>
+			</div>
+			<div id="meni">
+				<ul class="clearfix">
+					<li>
+						<a href="login.html">Login</a>
+					</li>
+					<li>
+						<a href="zadaci.html">Zadaci</a>
+					<li>
+						<a href="commiti.html">Pregled commita</a>
+					</li>
+					<li>
+						<a href="addZadatak.html">Dodavanje zadatka</a>
+					</li>
+					<li>
+						<a href="addVjezba.html">Dodavanje vježbe</a>
+					</li>
+					<li>
+						<a href="studenti.html">Studenti</a>
+					</li>
+					<li>
+						<a href="addGodina.html">Dodavanje godine</a>
+					</li>
+					<li>
+				</ul>
+			</div>
+			<div id="naslov"><h2>Dodavanje studenta</h2></div>
+		</div>
+		<div id="sredina">
+			<div id="glavniSadrzaj">
+				<form id="fPojedinacni">
+					<h2>Pojedinačni unos</h2>
+					<label>Godina</label>
+					<select name="godina" class="godina">
+                       <option value="2018/19">2018/19</option>
+                    </select>
+                    <label>Ime i prezime</label>
+					<input type="text" name="ime" id="ime" required>
+					<label>Index</label>
+					<input type="number" name="index" id="index" required>
+					<label>Email</label>
+					<input type="email" name="email" id="email" required> 
+					<input type="submit" name="submit" value="Unesi" class="dugme">
+				</form>
+				<form id="fMasovni">
+					<h2>Masovni unos</h2>
+					<label>Godina</label>
+					<select name="godina" class="godina">
+                       <option value="2018/19">2018/19</option>
+                    </select>
+                    <label>CSV fajl</label>
+					<input type="file" name="csv lista" id="csv">
+					<input type="submit" name="submit" value="Unesi" class="dugme">
+				</form>
+			</div>
+		</div>
+		<div id="footer">
+			Web tehnologije 2018/19
+		</div>
+	</div>
+
+</body>
+</html>

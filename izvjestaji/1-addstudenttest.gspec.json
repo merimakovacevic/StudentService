@@ -1,0 +1,112 @@
+{
+  "testId" : "1-addstudenttest.gspec",
+  "name" : "addstudenttest.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Simple check",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  addstudenttest.gspec --url http://localhost/addstudent.html --size 1024x768 --htmlreport izvjestaji",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: addstudenttest.gspec included tags: ",
+          "status" : "info",
+          "time" : 1541540258364,
+          "sections" : [ {
+            "name" : "Header",
+            "place" : {
+              "filePath" : "addstudenttest.gspec",
+              "lineNumber" : 11
+            },
+            "objects" : [ {
+              "name" : "header.logo",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "addstudenttest.gspec",
+                  "lineNumber" : 13
+                },
+                "name" : "above header.meni",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "header.logo",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "header.meni",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "21px"
+                } ],
+                "highlight" : [ "header.logo", "header.meni" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "addstudenttest.gspec",
+                  "lineNumber" : 14
+                },
+                "name" : "inside header 10px left, 10px top",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "header.logo",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "header",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : "10px",
+                  "realDistance" : "10px"
+                }, {
+                  "from" : {
+                    "object" : "header.logo",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "header",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "10px",
+                  "realDistance" : "10px"
+                } ],
+                "highlight" : [ "header.logo", "header" ]
+              } ]
+            }, {
+              "name" : "header.naslov",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "addstudenttest.gspec",
+                  "lineNumber" : 17
+                },
+                "name" : "text is \"Dodavanje studenta\"",
+                "highlight" : [ "header.naslov" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "header.logo" : {
+              "area" : [ 10, 10, 36, 40 ]
+            },
+            "header" : {
+              "area" : [ 0, 0, 994, 100 ]
+            },
+            "header.meni" : {
+              "area" : [ 10, 71, 974, 18 ]
+            },
+            "header.naslov" : {
+              "area" : [ 594, 15, 380, 46 ]
+            }
+          },
+          "screenshot" : "layout-1-screenshot.png",
+          "type" : "layout"
+        } ],
+        "time" : 1541540256405,
+        "type" : "node"
+      } ],
+      "time" : 1541540251438,
+      "type" : "node"
+    } ]
+  }
+}

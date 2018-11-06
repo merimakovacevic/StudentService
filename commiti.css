@@ -1,0 +1,121 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body, ul, ol, h1, h2, h3, h3, h4, h5, h6, p{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: Arial, sans-serif;
+}
+
+#header{
+	position: relative;
+    display: flex;
+    flex-direction: column;
+	background-color: #f4c99f;
+	height: 100px;
+	padding: 10px;
+}
+
+#meni{
+	position: relative;
+	margin-top: auto;
+}
+
+#meni ul{
+	list-style-type: none;
+}
+
+
+#meni ul li{
+	position: relative;
+	float: left;
+	padding: 0px 15px 0px 0px;
+}
+
+
+#header #logo {
+	position: relative;
+	float: left;
+}
+
+#header h2{
+	font-size: 40px;
+	text-align: center;
+}
+
+#sredina{
+	height: 580px;
+	background-color: #dfdce2;
+}
+
+#sredina p{
+	margin: 0px;
+	padding: 60px 0px 0px 40px;
+}
+
+#sredina p{
+	padding-bottom: 20px;
+	display: block;
+}
+
+#sredina table{
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 40px ;
+    text-align: center;
+    float: left;
+    height: 300px;
+}
+
+#sredina table .prva{
+	width: 200px;
+}
+
+#sredina table th, td{
+	border: 2px solid black;
+}
+
+#sredina table thead tr{
+	height: 40px;
+	background-color: #c2b7cc;
+}
+
+#sredina table:not(thead){
+	background-color: #ffffff;
+}
+
+#footer{
+	background-color: #f4c99f;
+	text-align: center;
+	padding: 20px 0px;
+}
+
+@media only screen and (min-width: 600px){
+	#sredina table{
+		width: 50%
+	}
+	#header h2{
+		position: absolute;
+		top: 15px;
+		right: 20px;
+	}
+}
+
+@media(max-width: 600px){
+	#sredina table{
+		width: 80%
+	}
+	#header{
+		height: 130px;
+	}
+	#header h2{
+		font-size: 25px;
+	}
+	}

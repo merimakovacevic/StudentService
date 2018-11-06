@@ -1,0 +1,223 @@
+{
+  "testId" : "1-zadacitest.gspec",
+  "name" : "zadacitest.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Simple check",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  zadacitest.gspec --url http://localhost/zadaci.html --size 1024x768 --htmlreport izvjestaji",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: zadacitest.gspec included tags: ",
+          "status" : "info",
+          "time" : 1541537286086,
+          "sections" : [ {
+            "name" : "Header",
+            "place" : {
+              "filePath" : "zadacitest.gspec",
+              "lineNumber" : 13
+            },
+            "objects" : [ {
+              "name" : "header.logo",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "zadacitest.gspec",
+                  "lineNumber" : 15
+                },
+                "name" : "above header.meni",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "header.logo",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "header.meni",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "21px"
+                } ],
+                "highlight" : [ "header.logo", "header.meni" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "zadacitest.gspec",
+                  "lineNumber" : 16
+                },
+                "name" : "inside header 10px left, 10px top",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "header.logo",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "header",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : "10px",
+                  "realDistance" : "10px"
+                }, {
+                  "from" : {
+                    "object" : "header.logo",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "header",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "10px",
+                  "realDistance" : "10px"
+                } ],
+                "highlight" : [ "header.logo", "header" ]
+              } ]
+            }, {
+              "name" : "header.naslov",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "zadacitest.gspec",
+                  "lineNumber" : 19
+                },
+                "name" : "text is \"Zadaci\"",
+                "highlight" : [ "header.naslov" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Sredina",
+            "place" : {
+              "filePath" : "zadacitest.gspec",
+              "lineNumber" : 23
+            },
+            "objects" : [ {
+              "name" : "sredina.cetvrtina",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "zadacitest.gspec",
+                  "lineNumber" : 25
+                },
+                "name" : "width 50 % of screen/width",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "sredina.cetvrtina",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "sredina.cetvrtina",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "50% [497px]",
+                  "realDistance" : "50% [498px]"
+                } ],
+                "highlight" : [ "sredina.cetvrtina" ]
+              } ]
+            }, {
+              "name" : "sredina.cetvrtina.godina",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "zadacitest.gspec",
+                  "lineNumber" : 27
+                },
+                "name" : "width 25% of screen/width",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "sredina.cetvrtina.godina",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "sredina.cetvrtina.godina",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "25% [248px]",
+                  "realDistance" : "25% [249px]"
+                } ],
+                "highlight" : [ "sredina.cetvrtina.godina" ]
+              } ]
+            }, {
+              "name" : "sredina.cetvrtina.student",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "zadacitest.gspec",
+                  "lineNumber" : 29
+                },
+                "name" : "width 25% of screen/width",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "sredina.cetvrtina.student",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "sredina.cetvrtina.student",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "25% [248px]",
+                  "realDistance" : "25% [249px]"
+                } ],
+                "highlight" : [ "sredina.cetvrtina.student" ]
+              } ]
+            }, {
+              "name" : "sredina.polovina",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "zadacitest.gspec",
+                  "lineNumber" : 31
+                },
+                "name" : "width 50 % of screen/width",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "sredina.polovina",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "sredina.polovina",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "50% [497px]",
+                  "realDistance" : "50% [497px]"
+                } ],
+                "highlight" : [ "sredina.polovina" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "header.logo" : {
+              "area" : [ 10, 10, 36, 40 ]
+            },
+            "sredina.cetvrtina.godina" : {
+              "area" : [ 0, 100, 249, 429 ]
+            },
+            "header" : {
+              "area" : [ 0, 0, 994, 100 ]
+            },
+            "header.meni" : {
+              "area" : [ 10, 71, 974, 18 ]
+            },
+            "sredina.cetvrtina.student" : {
+              "area" : [ 0, 100, 249, 429 ]
+            },
+            "sredina.polovina" : {
+              "area" : [ 497, 100, 497, 580 ]
+            },
+            "header.naslov" : {
+              "area" : [ 847, 15, 126, 46 ]
+            },
+            "sredina.cetvrtina" : {
+              "area" : [ 0, 100, 498, 0 ]
+            }
+          },
+          "screenshot" : "layout-1-screenshot.png",
+          "type" : "layout"
+        } ],
+        "time" : 1541537282871,
+        "type" : "node"
+      } ],
+      "time" : 1541537278312,
+      "type" : "node"
+    } ]
+  }
+}

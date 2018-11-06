@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>addZadatak</title>
+	<link rel="stylesheet" type="text/css" href="addZadatak.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<div id="sadrzaj">
+		<div id="header">
+			<div >
+				<div id="logo">
+					<img src="ikona.png" alt="Logo">
+				</div>
+			</div>
+			<div id="meni">
+				<ul class="clearfix">
+					<li>
+						<a href="login.html">Login</a>
+					</li>
+					<li>
+						<a href="zadaci.html">Zadaci</a>
+					<li>
+						<a href="commiti.html">Pregled commita</a>
+					</li>
+					<li>
+						<a href="studenti.html">Studenti</a>
+					</li>
+					<li>
+						<a href="addVjezba.html">Dodavanje vježbe</a>
+					</li>
+					<li>
+						<a href="addStudent.html">Dodavanje studenta</a>
+					</li>
+					<li>
+						<a href="addGodina.html">Dodavanje godine</a>
+					</li>
+					<li>
+				</ul>
+			</div>
+			<div id="naslov"><h2>Dodavanje zadatka</h2></div>
+		</div>
+		<div id="sredina">
+			<div id="glavniSadrzaj">
+				<form id="noviZadatak">
+					<h2>Novi zadatak</h2>
+					<label>Naziv zadatka</label>
+					<input type="text" name="naziv" id="naziv" required>
+					<label>Tekst postavke</label>
+					<input type="file" name="postavka" id="postavka" required>
+					<label>Vježbe/Spirale</label>
+					<select name="vjezba1" id="vjezba1">
+                       <option value="VjezbaX">Vjezba X</option>
+                    </select>   
+					<input type="submit" name="dodaj" value="Dodaj" id="dugme">
+				</form>
+			</div>
+		</div>
+		<div id="footer">
+			Web tehnologije 2018/19
+		</div>
+	</div>
+
+</body>
+</html>

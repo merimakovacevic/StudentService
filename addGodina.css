@@ -1,0 +1,183 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body, ul, ol, h1, h2, h3, h3, h4, h5, h6, p{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: Arial, sans-serif;
+}
+
+#header{
+	position: relative;
+    display: flex;
+    flex-direction: column;
+	background-color: #f4c99f;
+	height: 100px;
+	padding: 10px;
+}
+
+.clearfix::after,
+.clearfix::before{
+	content:"";
+	display: block;
+	overflow: hidden;
+}
+
+.clearfix:after{
+	clear: both;
+}
+
+#meni{
+	position: relative;
+	margin-top: auto;
+}
+
+#meni ul{
+	list-style-type: none;
+}
+
+
+#meni ul li{
+	position: relative;
+	float: left;
+	padding: 0px 15px 0px 0px;
+}
+
+
+#header #logo {
+	position: relative;
+	float: left;
+}
+
+#header h2{
+	font-size: 40px;
+	text-align: center;
+}
+
+#sredina{
+	position: relative;
+/*	display: flex;*/
+	align-content: center;
+	justify-content: center;
+	height: 700px;
+}
+
+#sredina #side, #sredina #glavniSadrzaj{
+	position: relative;
+	float: left;
+	height: 100%;
+}
+
+#sredina #side{
+	padding: 20px;
+	width: 35%;
+	background-color: #dadee5;
+}
+
+#sredina #side form h2{
+	text-align: center;
+}
+
+label{
+	display: block;
+	padding:20px 0px 15px 50px;
+}
+
+#sredina #side form #naziv, #sredina #side form #rvjezbe{
+	width: 330px;
+	height: 30px;
+	margin:0px 0px 10px 50px;
+}
+
+#sredina #side form #rspiral{
+	display: block;
+	width: 330px;
+	height: 30px;
+	margin:0px 0px 10px 50px;
+}
+
+#sredina #side form #ponisti{
+	width: 100px;
+	height: 30px;
+	margin: 30px 0px 15px 50px;
+}
+
+#sredina #side form #unesi{
+	width: 100px;
+	position: relative;
+	margin: 30px 120px 15px;
+	float: right;
+	height: 30px;
+}
+
+#sredina #glavniSadrzaj{
+	padding: 0px;
+	width: 65%;
+	background-color: #a69caf;
+}
+
+#sredina #glavniSadrzaj #kocke{
+	height: 650px;
+	width: 660px;
+	margin: 0 auto;
+}
+
+#sredina #glavniSadrzaj #kocke .godina{
+	background-color: #dbdcdd;
+	height: 230px;
+	width: 230px;
+	margin: 50px;
+	float: left;
+}
+
+#kocke .godina h4{
+	text-align: center;
+	padding-top: 3px;
+	padding-bottom: 10px;
+}
+
+#kocke .godina .p h5{
+	margin: 0 auto;
+	padding-bottom: 10px;
+	display: inline;
+}
+
+#kocke .godina .p{
+	margin: 0 auto;
+	padding: 10px;
+}
+
+#footer{
+	background-color: #f4c99f;
+	text-align: center;
+	padding: 20px 0px;
+}
+
+@media only screen and (min-width: 600px){
+	#header h2{
+		position: absolute;
+		top: 15px;
+		right: 20px;
+	}
+}
+
+@media(max-width: 600px){
+	#header{
+		height: 130px;
+	}
+	#header h2{
+		font-size: 25px;
+	}
+	#sredina{
+		flex-direction: column;
+	}
+	#sredina #side, #sredina #glavniSadrzaj{
+		width: 100%;
+	}
+}

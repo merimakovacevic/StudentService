@@ -1,0 +1,149 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body, ul, ol, h1, h2, h3, h3, h4, h5, h6, p{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: Arial, sans-serif;
+}
+
+#header{
+	position: relative;
+    display: flex;
+    flex-direction: column;
+	background-color: #f4c99f;
+	height: 100px;
+	padding: 10px;
+}
+
+.clearfix::after,
+.clearfix::before{
+	content:"";
+	display: block;
+	overflow: hidden;
+}
+
+.clearfix::after{
+	clear: both;
+}
+
+#meni{
+	position: relative;
+	margin-top: auto;
+}
+
+#meni ul{
+	list-style-type: none;
+}
+
+
+#meni ul li{
+	position: relative;
+	float: left;
+	padding: 0px 15px 0px 0px;
+}
+
+
+#header #logo {
+	position: relative;
+	float: left;
+}
+
+#header h2{
+	font-size: 40px;
+}
+
+#sredina{
+	position: relative;
+	align-content: center;
+	justify-content: center;
+	height: 500px;
+}
+
+#sredina #side, #sredina #glavniSadrzaj{
+	position: relative;
+	float: left;
+	padding: 20px;
+	height: 100%;
+}
+
+#sredina #side{
+	width: 35%;
+	background-color: #dadee5;
+}
+
+#sredina #glavniSadrzaj{
+	width: 65%;
+	background-color: #a69caf;
+}
+
+#sredina #side ul{
+	list-style-type: none;
+	border: 2px solid #000;
+	margin: 0 auto;
+	width: 200px;
+	height: 300px;
+	background-color: #fff;
+	overflow-y: scroll;
+}
+
+#sredina #side ul li {
+	padding: 5px 5px 0px;
+}
+
+#sredina #side h4{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#sredina #glavniSadrzaj table{
+	position: relative;
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 40px auto 0;
+}
+
+#sredina #glavniSadrzaj table thead{
+	background-color: #dadee5;
+    border-bottom: 3px solid #000;
+}
+
+#sredina #glavniSadrzaj table tr td {
+	padding: 15px 10px;
+	border: 1px solid black;
+}
+
+#footer{
+	background-color: #f4c99f;
+	text-align: center;
+	padding: 20px 0px;
+}
+
+@media only screen and (min-width: 600px){
+	#header h2{
+		position: absolute;
+		top: 15px;
+		right: 20px;
+	}
+}
+
+@media(max-width: 600px){
+	#header{
+		height: 120px;
+	}
+
+	#header h2{
+		font-size: 25px;
+	}
+
+	#sredina #side, #sredina #glavniSadrzaj{
+		width: 100%;
+	}
+}
