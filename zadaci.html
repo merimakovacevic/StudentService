@@ -54,9 +54,10 @@
 				</div>
 				<div id="student">
 					<h4>Student</h4>
-					<form>
+					<form onsubmit="doLogin(event)">
 						<input type="text" name="query" placeholder="" class="polje">
-						<input type="submit" value="Search" class="dugme">
+						<input type="submit" value="Search" class="dugme" onclick="doLogin(event)">
+						<div id="poruke"></div>
 					</form>
 
 					<ul>
@@ -106,12 +107,15 @@
 					</div>
 				</div>
 			</div>
+			
 		</div>
+
 		<div id="footer">
 			Web tehnologije 2018/19
 		</div>
 	</div>
-
+	<script src="validacija.js"></script>
+	<script src="zadaci.js"></script>
 </body>
 </html>
 

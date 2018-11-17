@@ -45,58 +45,63 @@
 				Naziv vježbe/spirale: Vježba 1 <br>
 				Repozitorij: <a href="#">Hyperlink</a> <br><br>
 			</p>
-			<table id="tabela">
-				<thead>
-					<tr>
-						<td id="prva">Naziv zadatka</td>
-						<td colspan="8">Commiti</td>
-					</tr>
-				</thead>
-				<tr>
-					<td class="prva"><a href="https://docs.google.com/document/d/1ZjkBwWG_gsRokjp7oGwDpFm40qXM1tB9AwcV5_Qv8W8/edit">Zadatak 1</a></td>
-					<td><a href="https://bitbucket.org/">1</a></td>
-					<td><a href="https://bitbucket.org/">2</a></td>
-					<td><a href="https://bitbucket.org/">3</a></td>
-					<td><a href="https://bitbucket.org/">4</a></td>
-					<td><a href="https://bitbucket.org/">5</a></td>
-					<td><a href="https://bitbucket.org/">6</a></td>
-					<td><a href="https://bitbucket.org/">7</a></td>
-					<td><a href="https://bitbucket.org/">8</a></td>
-				</tr>
-				<tr>
-				    <td class="prva"><a href="https://docs.google.com/document/d/1ZjkBwWG_gsRokjp7oGwDpFm40qXM1tB9AwcV5_Qv8W8/edit">Zadatak 2</a></td>
-					<td><a href="https://bitbucket.org/">1</a></td>
-					<td><a href="https://bitbucket.org/">2</a></td>
-					<td><a href="https://bitbucket.org/">3</a></td>
-					<td><a href="https://bitbucket.org/">4</a></td>
-					<td colspan="4"></td>
-				</tr>
-				<tr>
-				    <td class="prva"><a href="https://docs.google.com/document/d/1ZjkBwWG_gsRokjp7oGwDpFm40qXM1tB9AwcV5_Qv8W8/edit">Zadatak 3</a></td>
-				    <td><a href="https://bitbucket.org/">1</a></td>
-				    <td colspan="7"></td>
-				</tr>
-				<tr>
-				    <td class="prva"><a href="https://docs.google.com/document/d/1ZjkBwWG_gsRokjp7oGwDpFm40qXM1tB9AwcV5_Qv8W8/edit">Zadatak 4</a></td>
-				    <td colspan="8"></td>
-				</tr>
-				<tr>
-				    <td class="prva"><a href="https://docs.google.com/document/d/1ZjkBwWG_gsRokjp7oGwDpFm40qXM1tB9AwcV5_Qv8W8/edit">Zadatak 5</a></td>
-				    <td colspan="8"></td>
-				</tr>
-				<tr>
-				    <td class="prva"><a href="https://docs.google.com/document/d/1ZjkBwWG_gsRokjp7oGwDpFm40qXM1tB9AwcV5_Qv8W8/edit">Zadatak 6</a></td>
-				    <td colspan="8"></td>
-				</tr>
-				<tr>
-				    <td class="prva"><a href="https://docs.google.com/document/d/1ZjkBwWG_gsRokjp7oGwDpFm40qXM1tB9AwcV5_Qv8W8/edit">Zadatak 7</a></td>
-				    <td colspan="8"></td>
-				</tr>
-			</table>
+			<div id="tabela-holder"></div>
+			<div id="forma">
+				<form id="kreiranje-tabele" onsubmit="kreiranjeTabele(event)">
+					<label>Broj redova</label>
+					<input type="number" min="1" required name="brojRedova" id="brojRedova">
+					<button>Kreiraj tabelu</button>
+				</form>
+				<div id="prikazi-sa-tabelom" style="display: none">
+					<button id="obrisi-tabelu" onclick="obrisiTabelu()">Obrisi tabelu</button>
+
+					<form onsubmit="dodajCommitUTabelu(event)" id="forma-dodavanje-commita">
+						<h2>Dodavanje commita</h2>
+						<label>Broj zadataka</label>
+						<input type="number" name="brZadatka" required>
+						<label>URL</label>
+						<input type="text" name="url" required>
+						<button>Dodaj commit</button>
+	
+						<div id="poruka-dodavanja"></div>
+					</form>
+
+					<form onsubmit="editujCommitUTabeli(event)" id="forma-editovanje-commita">
+						<h2>Editovanje commita</h2>
+						<label>Broj zadataka</label>
+						<input type="number" name="brZadatka" required>
+						<label>Broj commita</label>
+						<input type="number" name="brKolone" required>
+						<label>URL</label>
+						<input type="text" name="url" required>
+						<button>Edituj commit</button>
+	
+						<div id="poruka-editovanja"></div>
+					</form>
+
+					
+
+					<form onsubmit="obrisiCommitUTabeli(event)" id="forma-brisanje-commita">
+						<h2>Brisanje commita</h2>
+						<label>Broj zadataka</label>
+						<input type="number" name="brZadatka" required>
+						<label>Broj commita</label>
+						<input type="number" name="brKolone" required>
+						<button>Obrisi commit</button>
+	
+						<div id="poruka-brisanja"></div>
+					</form>
+				</div>
+			</div>
 		</div>
 		<div id="footer">
 			Web tehnologije 2018/19
 		</div>
 </div>
+<script src="commit.js"></script>
+<script src="commiti.js"></script>
+<script src="validacija.js"></script>
+
+
 </body>
 </html>

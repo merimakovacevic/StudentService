@@ -42,7 +42,7 @@
 		</div>
 		<div id="sredina" class="clearfix">
 			<div id="side">
-				<form >
+				<form onsubmit="doLogin(event)">
 					<h2>Unos godine</h2>
                     <label>Naziv godine</label>
 					<input type="text" name="naziv" id="naziv" required>
@@ -51,7 +51,8 @@
 					<label>Naziv repozitorija spirale</label>
 					<input type="text" name="rspiral" id="rspiral" required>
 					<input type="submit" name="ponisti" value="Poništi" id="ponisti">
-					<input type="submit" name="submit" value="Unesi" id="unesi">
+					<input type="submit" name="submit" value="Unesi" id="unesi" onclick="doLogin(event)">
+					<div id="poruka"></div>
 				</form>
 			</div>
 
@@ -86,6 +87,7 @@
 			Web tehnologije 2018/19
 		</div>
 	</div>	
-
+	<script src="validacija.js"></script>
+	<script src="addGodina.js"></script>
 </body>
 </html>

@@ -116,6 +116,11 @@ label{
 	height: 30px;
 }
 
+#sredina #side form #poruka{
+	margin-top: 15px;
+	margin-left: 50px;
+}
+
 #sredina #glavniSadrzaj{
 	padding: 0px;
 	width: 65%;
@@ -179,5 +184,8 @@ label{
 	}
 	#sredina #side, #sredina #glavniSadrzaj{
 		width: 100%;
+	}
+	#sredina #side form #unesi{
+		margin-left: 40px;
 	}
 }

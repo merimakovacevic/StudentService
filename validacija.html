@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>validacija</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<script src="validacija.js"></script>
+
+</head>
+<body>
+	<div id="register">
+			<h2 id="naslovR"> Registracija </h2>
+			<form id="forma2" action="#">
+				<table id="tabelaRegistracijaS">
+					<tr>
+						<td>Ime:</td>
+						<td><input type="text" name="text" id="ime" onblur="Validacija.ime(this.value)"></td>
+					</tr>
+					<tr>
+						<td>Godina:</td>
+						<td><input type="text" name="text"></td>
+					</tr>
+					<tr>
+						<td>Naziv repozitorija:</td>
+						<td><input type="text" name="text"></td>
+					</tr>
+					<tr>
+						<td>Broj indexa:</td>
+						<td><input type="text" name="text"></td>
+					</tr>
+					<tr>
+						<td>Naziv:</td>
+						<td><input type="text" name="text"></td>
+					</tr>
+					<tr>
+						<td>Password:</td>
+						<td><input type="password" name="password1" id="passPrvi" ></td>
+					</tr>
+					<tr>
+						<td>URL:</td>
+						<td><input type="text" name="text" ></td>
+					</tr>
+					
+					<tr>
+						<td colspan="2"><p id="poruke"></p></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" id="register"" value="Registruj"></td>
+						<!-- <td colspan="2"><input type="submit" name="submit" value="Unesi" id="unesi"></td> -->
+					</tr>
+				</table>
+			</form>
+		</div>
+</body>
+</html>

@@ -65,7 +65,7 @@ body{
 #sredina #glavniSadrzaj #noviZadatak{
 	box-shadow: 5px 10px 8px #888888;
 	width: 40%;
-    height: 450px;
+    height: 500px;
     margin: auto;
 	background-color: #f6f2f9;
 	padding-top: 15px;
@@ -102,6 +102,11 @@ label{
 	height: 30px;
 }
 
+#sredina #glavniSadrzaj #noviZadatak #poruka{
+	margin-top: 80px;
+	margin-left: 50px;
+}
+
 #footer{
 	background-color: #f4c99f;
 	text-align: center;
@@ -121,6 +126,9 @@ label{
 
 @media(max-width: 600px){
 	#sredina #glavniSadrzaj #noviZadatak{
+		width: 100%;
+	}
+	#sredina #glavniSadrzaj{
 		width: 100%;
 	}
 	#header{
