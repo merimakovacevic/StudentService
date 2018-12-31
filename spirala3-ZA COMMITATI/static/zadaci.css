@@ -1,0 +1,212 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body, ul, ol, h1, h2, h3, h3, h4, h5, h6, p{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: Arial, sans-serif;
+}
+
+#header{
+	position: relative;
+    display: flex;
+    flex-direction: column;
+	background-color: #f4c99f;
+	height: 100px;
+	padding: 10px;
+}
+
+.clearfix::after,
+.clearfix::before{
+	content:"";
+	display: block;
+	overflow: hidden;
+}
+
+.clearfix:after{
+	clear: both;
+}
+
+#meni{
+	position: relative;
+	margin-top: auto;
+}
+
+#meni ul{
+	list-style-type: none;
+}
+
+
+#meni ul li{
+	position: relative;
+	float: left;
+	padding: 0px 15px 0px 0px;
+}
+
+
+#header #logo {
+	position: relative;
+	float: left;
+}
+
+#header h2{
+	font-size: 40px;
+	text-align: right;
+}
+
+#sredina{
+	position: relative;
+	align-content: center;
+	justify-content: center;
+	height: 580px;
+}
+
+#sredina .cetvrtina #godina,#sredina .cetvrtina #student, #sredina .polovina{
+	position: relative;
+	float: left;
+	padding: 20px;
+	height: 100%;
+}
+
+#sredina .cetvrtina{
+	width: 50%;
+	background-color: #dadee5;
+}
+
+#sredina .cetvrtina #godina{
+	width: 50%;
+}
+
+#sredina .cetvrtina #student{
+	width: 50%;
+
+}
+
+#sredina .cetvrtina #student form{
+	position: relative;
+	margin-left: 58px;
+	margin-bottom: 20px;
+}
+
+#sredina .cetvrtina #student form .dugme{
+	width: 60%;
+}
+
+#sredina .cetvrtina #student form .polje{
+	margin-bottom: 10px;
+	width: 60%;
+}
+
+#sredina .polovina{
+	width: 50%;
+	background-color: #dadee5;
+}
+
+#sredina .cetvrtina #godina ul{
+	list-style-type: none;
+	border: 2px solid #000;
+	margin: 0 auto;
+	width: 60%;
+	height: 350px;
+	background-color: #fff;
+	overflow-y: scroll;
+}
+
+#sredina .cetvrtina #student ul{
+	list-style-type: none;
+	border: 2px solid #000;
+	margin: 0 auto;
+	width: 60%;
+	height: 280px;
+	background-color: #fff;
+	overflow-y: scroll;
+}
+
+#sredina .cetvrtina #godina ul li, #sredina .cetvrtina #student ul li {
+	padding: 5px 5px 0px;
+}
+
+#sredina .cetvrtina h4{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#sredina .polovina .folder #vjezbe, #sredina .polovina .folder #spirale{
+	width:80%;
+	height: 250px;
+	box-shadow: 5px 10px 8px #888888;
+	margin: 0 auto;
+	margin-bottom: 15px;
+	position: relative;
+	background-color: #e0ddd7;
+	padding-left: 20px;
+
+}
+
+input .dugme{
+	margin-bottom: 20px;
+}
+
+
+#sredina .polovina .folder #vjezbe .item, #sredina .polovina .folder #spirale .item{
+	height: 60px;
+	width: 26%;
+	position: relative;
+	float: left;
+	border: 1px solid #3a7fc9;
+	padding: 20px 0px 20px 5px;
+	margin: 3%;
+	background-color: #64a7ef;
+	color: #c0c3c6;
+	text-align: center;
+}
+
+#footer{
+	background-color: #f4c99f;
+	text-align: center;
+	padding: 20px 0px;
+}
+
+@media only screen and (min-width: 600px){
+	#sredina .cetvrtina #student form .dugme{
+	width: 220px;
+}
+
+#sredina .cetvrtina #student form .polje{
+	width: 220px;
+}
+	#header h2{
+		position: absolute;
+		top: 15px;
+		right: 20px;
+	}
+}
+
+@media(max-width: 600px){
+	#sredina .cetvrtina #student ul{
+		width: 90%;
+	}
+	#sredina .cetvrtina #godina ul{
+		width: 90%;
+	}
+	#header{
+		height: 130px;
+	}
+	#header h2{
+		font-size: 25px;
+	}
+	#sredina{
+		flex-direction: column;
+		height: 900px;
+	}
+	#sredina .cetvrtina #godina, #sredina .cetvrtina #student, #sredina .polovina{
+		width: 100%;
+	}
+}
+
