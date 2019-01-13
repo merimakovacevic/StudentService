@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>addVjezba</title>
+	<link rel="stylesheet" type="text/css" href="addVjezba.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<div id="sadrzaj">
+		<div id="header">
+			<div >
+				<div id="logo">
+					<img src="ikona.png" alt="Logo">
+				</div>
+			</div>
+			<div id="meni">
+				<ul class="clearfix">
+					<li>
+						<a href="login.html">Login</a>
+					</li>
+					<li>
+						<a href="zadaci.html">Zadaci</a>
+					<li>
+						<a href="commiti.html">Pregled commita</a>
+					</li>
+					<li>
+						<a href="addZadatak.html">Dodavanje zadatka</a>
+					</li>
+					<li>
+						<a href="studenti.html">Studenti</a>
+					</li>
+					<li>
+						<a href="addStudent.html">Dodavanje studenta</a>
+					</li>
+					<li>
+						<a href="addGodina.html">Dodavanje godine</a>
+					</li>
+					<li>
+				</ul>
+			</div>
+			<div id="naslov"><h2>Dodavanje vježbe/spirale</h2></div>
+		</div>
+		<div id="sredina">
+			<div id="glavniSadrzaj">
+				<form id="fPostojeca" action="/godina-vjezba" method="POST">
+					<h2>Dodavanje postojeće vježbe/spirale</h2>
+					<label>Godina</label>
+					<select id="sGodine" name="godina" class="sGodine">
+                       <!-- <option value="2018/19">2018/19</option> -->
+                    </select>
+                    <label>Vježbe/Spirale</label>
+                    <select name="vjezba" id="sVjezbe">
+                       <!-- <option value="VjezbaX">Vjezba X</option> -->
+                    </select>   
+					<input type="submit" name="submit" value="Dodaj" class="dugme">
+				</form>
+				<form id="fNova" action="/vjezba-zadatak" method="POST">
+					<h2>Nova vježba/spirala</h2>
+                    <label>Naziv vježbe</label>
+					<input type="text" name="naziv" id="naziv" placeholder="Vjezba X" value="Vježba X" required>
+					<label>Godina</label>
+					<select id="sGodine2" name="godina" class="sGodine">
+                       <!-- <option value="2018/19">2018/19</option> -->
+                    </select>
+                    <ul id="listZadaci">
+                    	<!-- <li>Zadatak 1</li>
+                    	<li>Zadatak 2</li>
+                    	<li>Zadatak 3</li> -->
+                    </ul>
+                    <select name="zadatak" id="sZadatak">
+                       <!-- <option value="ZadatakX">Zadatak X</option> -->
+					</select>   
+					<a href="addZadatak.html">
+						<input type="button" name="dZadatak" value="Dodaj zadatak" id="dZadatak">
+					</a>
+					<input type="checkbox" name="spirala" value="false" id="check">Spirala
+					<input type="submit" name="submit" value="Dodaj" class="dugme">
+				</form>
+			</div>
+		</div>
+		<div id="footer">
+			Web tehnologije 2018/19
+		</div>
+	</div>
+	<script src="./addVjezba.js"></script>
+</body>
+</html>

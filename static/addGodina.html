@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>addGodina</title>
+	<link rel="stylesheet" type="text/css" href="addGodina.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<div id="sadrzaj">
+		<div id="header">
+			<div >
+				<div id="logo">
+					<img src="ikona.png" alt="Logo">
+				</div>
+			</div>
+			<div id="meni">
+				<ul class="clearfix">
+					<li>
+						<a href="login.html">Login</a>
+					</li>
+					<li>
+						<a href="zadaci.html">Zadaci</a>
+					<li>
+						<a href="commiti.html">Pregled commita</a>
+					</li>
+					<li>
+						<a href="addZadatak.html">Dodavanje zadatka</a>
+					</li>
+					<li>
+						<a href="addVjezba.html">Dodavanje vježbe</a>
+					</li>
+					<li>
+						<a href="addStudent.html">Dodavanje studenta</a>
+					</li>
+					<li>
+						<a href="studenti.html">Studenti</a>
+					</li>
+					<li>
+				</ul>
+			</div>
+			<div id="naslov"><h2>Dodavanje godine</h2></div>
+		</div>
+		<div id="sredina" class="clearfix">
+			<div id="side">
+				<form onsubmit="doLogin(event)" method="POST" action="/godine">
+					<h2>Unos godine</h2>
+                    <label>Naziv godine</label>
+					<input type="text" name="naziv" id="naziv" required>
+					<label>Naziv repozitorija vježbe</label>
+					<input type="text" name="nazivRepVje" id="rvjezbe" required>
+					<label>Naziv repozitorija spirale</label>
+					<input type="text" name="nazivRepSpi" id="rspiral" required>
+					<input type="reset" value="Poništi" id="ponisti">
+					<input type="submit" value="Unesi" id="unesi" onclick="doLogin(event)">
+					<div id="poruka"></div>
+				</form>
+			</div>
+
+			<div id="glavniSadrzaj">
+				<div id="kocke">
+					<div class="godina"> 
+						<h4>2015/16</h4>
+						<div class="p">
+							<h5>Broj studenata: </h5>90<br>
+							<h5>Broj vjezbi: </h5>10<br>
+							<h5>Broj spirala: </h5>4<br>
+						</div>
+					</div>
+					<div class="godina">
+						<h4>2016/17</h4>
+						<div class="p">
+							<h5>Broj studenata: </h5>90<br>
+							<h5>Broj vjezbi: </h5>10<br>
+							<h5>Broj spirala: </h5>4<br>
+						</div>
+					</div>
+					<div class="godina">
+						
+					</div>
+					<div class="godina">
+						
+					</div>
+				</div>	
+			</div>
+		</div>
+		<div id="footer">
+			Web tehnologije 2018/19
+		</div>
+	</div>	
+	<script src="validacija.js"></script>
+	<script src="addGodina.js"></script>
+	<script src="GodineAjax.js"></script>
+	<script>
+		new GodineAjax(document.getElementById("kocke"));
+	</script>
+</body>
+</html>

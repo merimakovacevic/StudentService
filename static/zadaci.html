@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>zadaci</title>
+	<link rel="stylesheet" type="text/css" href="zadaci.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<div id="sadrzaj">
+		<div id="header">
+			<div >
+				<div id="logo">
+					<img src="ikona.png" alt="Logo">
+				</div>
+			</div>
+			<div id="meni">
+				<ul class="clearfix">
+					<li>
+						<a href="login.html">Login</a>
+					</li>
+					<li>
+						<a href="studenti.html">Studenti</a>
+					<li>
+						<a href="commiti.html">Pregled commita</a>
+					</li>
+					<li>
+						<a href="addZadatak.html">Dodavanje zadatka</a>
+					</li>
+					<li>
+						<a href="addVjezba.html">Dodavanje vježbe</a>
+					</li>
+					<li>
+						<a href="addStudent.html">Dodavanje studenta</a>
+					</li>
+					<li>
+						<a href="addGodina.html">Dodavanje godine</a>
+					</li>
+					<li>
+				</ul>
+			</div>
+			<div id="naslov"><h2>Zadaci</h2></div>
+		</div>
+		<div id="sredina" class="clearfix">
+			<div class="cetvrtina">
+				<div id="godina">
+					<h4>Godina</h4>
+					<ul>
+						<li>Godina 2014/15</li>
+						<li>Godina 2015/16</li>
+						<li>Godina 2016/17</li>
+						<li>Godina 2017/18</li>
+						<li>Godina 2018/19</li>
+					</ul>
+				</div>
+				<div id="student">
+					<h4>Student</h4>
+					<form onsubmit="doLogin(event)">
+						<input type="text" name="query" placeholder="" class="polje">
+						<input type="submit" value="Search" class="dugme" onclick="doLogin(event)">
+						<div id="poruke"></div>
+					</form>
+
+					<ul>
+						<li>Ime i prezime | index</li>
+						<li>Neko Nekić | 12345</li>
+						<li>Neko Nekić | 12345</li>
+						<li>Neko Nekić | 12345</li>
+						<li>Neko Nekić | 12345</li>
+					</ul>
+				</div>
+			</div>
+			<div class="polovina">
+				<div class="folder">
+					<div id="vjezbe">
+						<div class="item">
+							<h4>Vježba 1</h4>
+						</div>
+						<div class="item">
+							<h4>Vježba 2</h4>
+						</div>
+						<div class="item">
+							<h4>Vježba 3</h4>
+						</div>
+						<div class="item">
+							<h4>Vježba 4</h4>
+						</div>
+						<div class="item">
+							<h4>Vježba 5</h4>
+						</div>
+						<div class="item">
+							<h4>Vježba 6</h4>
+						</div>
+					</div>
+					<div id="spirale">
+						<div class="item">
+							<h4>Spirala 1</h4>
+						</div>
+						<div class="item">
+							<h4>Spirala 2</h4>
+						</div>
+						<div class="item">
+							<h4>Spirala 3</h4>
+						</div>
+						<div class="item">
+							<h4>Spirala 4</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+		<div id="footer">
+			Web tehnologije 2018/19
+		</div>
+	</div>
+	<script src="validacija.js"></script>
+	<script src="zadaci.js"></script>
+</body>
+</html>
+
+<!-- ZA FOLDERE SE KORISTI BOX SHADOW -->

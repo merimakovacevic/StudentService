@@ -1,0 +1,149 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body, ul, ol, h1, h2, h3, h3, h4, h5, h6, p{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: Arial, sans-serif;
+}
+
+#header{
+	position: relative;
+    display: flex;
+    flex-direction: column;
+	background-color: #f4c99f;
+	height: 100px;
+	padding: 10px;
+}
+
+#meni{
+	position: relative;
+	margin-top: auto;
+}
+
+#meni ul{
+	list-style-type: none;
+}
+
+
+#meni ul li{
+	position: relative;
+	float: left;
+	padding: 0px 15px 0px 0px;
+}
+
+
+#header #logo {
+	position: relative;
+	float: left;
+}
+
+#header h2{
+	font-size: 40px;
+	text-align: center;
+}
+
+#sredina{
+	height: 980px;
+	background-color: #dfdce2;
+}
+
+#sredina #glavniSadrzaj{
+	width: 85%;
+	height: 980px;
+	background-color:#e9e6ed;
+	margin: 0 auto;
+	padding:20px;
+}
+
+#sredina #glavniSadrzaj #fPojedinacni{
+	box-shadow: 5px 10px 8px #888888;
+	width: 450px;
+    height: 550px;
+    margin: auto;
+    margin-bottom: 20px;
+	background-color: #f6f2f9;
+	padding-top: 15px;
+}
+
+#sredina #glavniSadrzaj #fMasovni{
+	box-shadow: 5px 10px 8px #888888;
+	width: 450px;
+    height: 330px;
+    margin: auto;
+	background-color: #f6f2f9;
+	padding-top: 15px;
+}
+
+#sredina #glavniSadrzaj #fPojedinacni h2, #sredina #glavniSadrzaj #fMasovni h2{
+	text-align: center;
+}
+
+label{
+	display: block;
+	padding:20px 0px 15px 50px;
+}
+
+#sredina #glavniSadrzaj #fPojedinacni .godina, #sredina #glavniSadrzaj #fPojedinacni #index, 
+#sredina #glavniSadrzaj #fPojedinacni #ime,#sredina #glavniSadrzaj #fPojedinacni #email{
+	width: 250px;
+	height: 30px;
+	margin:0px 0px 10px 50px;
+}
+
+#sredina #glavniSadrzaj #fPojedinacni .dugme{
+	width: 150px;
+	position: relative;
+	margin: 30px 50px 15px;
+	float: right;
+	height: 30px;
+}
+
+#sredina #glavniSadrzaj #fMasovni .godina{
+	width: 250px;
+	height: 30px;
+	margin:0px 0px 20px 50px;
+}
+
+#sredina #glavniSadrzaj #fMasovni #csv{
+	margin:0px 0px 20px 50px;
+}
+
+#sredina #glavniSadrzaj #fMasovni .dugme{
+	float: right;
+	margin:20px 50px 20px 20px;
+	width: 150px;
+	height: 30px;
+}
+
+#footer{
+	background-color: #f4c99f;
+	text-align: center;
+	padding: 20px 0px;
+}
+
+@media only screen and (min-width: 600px){
+	#header h2{
+		position: absolute;
+		top: 15px;
+		right: 20px;
+	}
+}
+
+@media(max-width: 600px){
+	#header{
+		height: 130px;
+	}
+	#header h2{
+		font-size: 25px;
+	}
+	#sredina #glavniSadrzaj{
+		width: 100%;
+	}
+}
