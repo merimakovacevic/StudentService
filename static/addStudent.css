@@ -91,7 +91,7 @@ label{
 }
 
 #sredina #glavniSadrzaj #fPojedinacni .godina, #sredina #glavniSadrzaj #fPojedinacni #index, 
-#sredina #glavniSadrzaj #fPojedinacni #ime,#sredina #glavniSadrzaj #fPojedinacni #email{
+#sredina #glavniSadrzaj #fPojedinacni .ime,#sredina #glavniSadrzaj #fPojedinacni #email{
 	width: 250px;
 	height: 30px;
 	margin:0px 0px 10px 50px;

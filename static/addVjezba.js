@@ -1,6 +1,8 @@
 function listVjezbe() {
     let divSadrzaj = document.getElementById('sVjezbe')
+    let divSadrzaj2 = document.getElementById('zadatakVjezbe')
     divSadrzaj.innerHTML = "";
+    divSadrzaj2.innerHTML = "";
 
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
@@ -13,6 +15,7 @@ function listVjezbe() {
                 `;
             }
             divSadrzaj.innerHTML = html;
+            divSadrzaj2.innerHTML = html;
         }
     };
     request.open("GET", "/vjezbe", true);
@@ -37,40 +40,38 @@ function listGodine() {
             }
             divSadrzaj.innerHTML = html;
             divSadrzaj2.innerHTML = html;
+            refreshZadatke();
         }
     };
     request.open("GET", "/godine", true);
     request.send();
 }
 
-function listZadaci() {
-    let divSadrzaj = document.getElementById('sZadatak')
-    let divSadrzajList = document.getElementById('listZadaci')
+function refreshZadatke() {
+    let divSadrzaj = document.getElementById('listZadaci');
+    let trenutnaVjezba = document.getElementById('zadatakVjezbe').value;
+    let forma = document.getElementById('fPovezana').action = '/vjezba/' + trenutnaVjezba + '/zadatak';
+
+    console.log(trenutnaVjezba);
     divSadrzaj.innerHTML = "";
-    divSadrzajList.innerHTML = ""
 
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if (request.readyState == 4 && request.status == 200) {
             var zadaci = JSON.parse(request.responseText);
             var html = "";
-            var htmlList = "";
             for (var zadatak of zadaci) {
                 html +=  `
                     <option value="${zadatak['id']}">${zadatak['naziv']}</option>
                 `;
-                htmlList +=  `
-                    <li>${zadatak['naziv']}</li>
-                `;
             }
             divSadrzaj.innerHTML = html;
-            divSadrzajList.innerHTML = htmlList;
         }
     };
-    request.open("GET", "/zadatak", true);
+    request.open("GET", "/zadaci?bez="+trenutnaVjezba , true);
+    request.setRequestHeader("accept", "application/json");
     request.send();
 }
 
 listVjezbe();
 listGodine();
-listZadaci();

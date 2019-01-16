@@ -43,27 +43,18 @@
 		<div id="sredina">
 			<div id="glavniSadrzaj">
 				<form id="fPojedinacni" action="/student" method="POST">
-					<h2>Pojedinačni unos</h2>
+					<h2>Unos</h2>
 					<label>Godina</label>
-					<select id="sGodine" name="id_godina" class="godina">
+					<select id="sGodine" name="sGodina" class="godina">
                        <!-- <option value="2018/19">2018/19</option> -->
                     </select>
-                    <label>Ime i prezime</label>
-					<input type="text" name="imePrezime" id="ime" required>
-					<label>Index</label>
-					<input type="number" name="index" id="index" required>
-					<input type="submit" name="submit" value="Unesi" class="dugme" onclick="doLogin()">
-					<div id="poruka"></div>
-				</form>
-				<form id="fMasovni">
-					<h2>Masovni unos</h2>
-					<label>Godina</label>
-					<select id="sGodine2" name="id_godina" class="godina">
-                       <!-- <option value="2018/19">2018/19</option> -->
-                    </select>
-                    <label>CSV fajl</label>
-					<input type="file" name="csv lista" id="csv">
-					<input type="button" onclick="studentiMulti()" name="submit" value="Unesi" class="dugme">
+                    <label>Key</label>
+					<input type="text" name="key" class="ime" required>
+					<label>Secret</label>
+					<input type="text" name="secret" class="ime" required>
+					<button value="Ucitaj" class=dugme></button>
+					<input type="button" name="Dodaj" disabled>
+
 				</form>
 			</div>
 		</div>

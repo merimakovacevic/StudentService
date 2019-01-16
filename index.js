@@ -8,8 +8,7 @@ const Zadatak = require('./schemas/zadatak')
 const Student = require('./schemas/student')
 const Godina = require('./schemas/godina')
 const Vjezba = require('./schemas/vjezba')
-const GodinaVjezba = require('./schemas/godina_vjezba')
-const VjezbaZadatak = require('./schemas/vjezba_zadatak')
+const sequelize = require('./connection')
 
 const BitBucket = require('./bitBucket')
 
@@ -35,39 +34,16 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 // DB
+Godina.hasMany(Student, { as: 'godine', foreignKey: 'id_godina' })
 
-// Create models in DB
-Godina.sync();
-Student.sync()
-Zadatak.sync();
-Vjezba.sync();
+//Druga
+const GodinaVjezba=Godina.belongsToMany(Vjezba,{as:'vjezbe',through:'godina_vjezba',foreignKey:'idgodina'});
+Vjezba.belongsToMany(Godina,{as:'godine',through:'godina_vjezba',foreignKey:'idvjezba'});
+//Treca
+const VjezbaZadatak=Vjezba.belongsToMany(Zadatak,{as:'zadaci',through:'vjezba_zadatak',foreignKey:'idvjezba'});
+Zadatak.belongsToMany(Vjezba,{as:'vjezbe',through:'vjezba_zadatak',foreignKey:'idzadatak'});
 
-
-Godina.hasMany(Student, { as: 'student', foreignKey: 'id_godina' })
-
-Godina.belongsToMany(Vjezba, {
-    as: 'id_godina',
-    through: { model: GodinaVjezba, unique: false },
-    foreignKey: 'id_godina'
-});
-Vjezba.belongsToMany(Godina, {
-    as: 'id_vjezba',
-    through: { model: GodinaVjezba, unique: false },
-    foreignKey: 'id_vjezba'
-});
-GodinaVjezba.sync();
-
-Zadatak.belongsToMany(Vjezba, {
-    as: 'id_zadatak',
-    through: { model: VjezbaZadatak, unique: false },
-    foreignKey: 'id_zadatak'
-});
-Vjezba.belongsToMany(Zadatak, {
-    as: 'id_vjezbaa',
-    through: { model: VjezbaZadatak, unique: false },
-    foreignKey: 'id_vjezba'
-});
-VjezbaZadatak.sync();
+sequelize.sync().then(() => console.log("Models create OK"));
 
 
 // END DB
@@ -97,28 +73,23 @@ app.post('/zadatak', upload.single('postavka'), (req, res) => {
 
 // Send array zadataka like objects { id, name, ... }
 app.post('/vjezba/:id/zadatak', (req, res) => {
-    const vz_create = [];
-    req.body.forEach(zadatak => {
-        vz_create.push({
-            id_vjezba: req.params.id,
-            id_zadatak: zadatak.id
+    Vjezba.findByPk(req.params.id).then(vjezba => {
+        vjezba.addZadaci(req.body.sZadatak).then(() => {
+            res.redirect("/addVjezba.html");
+        }).catch(err => {
+            console.log(err);
+            res.redirect('/greska.html');
         })
-    })
-
-    VjezbaZadatak.bulkCreate(vz_create).then(data => {
-        res.json({
-            message: 'Everything went fine :)'
-        })         
     }).catch(err => {
+        console.log(err);
         res.redirect('/greska.html');
-    })
+    });
 });
 
-// ZADATAK 3
+// ZADATAK 3 //ovo bi trebalo za 7 zad da ide na ovu putanju
 app.get('/zadatak', (req, res) => {
-    Zadatak.findAll().then(data => {
-        res.json(data);
-    })
+    var punaPutanja = path.join(process.cwd(), 'files', req.query['naziv'] + '.pdf');
+    res.sendFile(punaPutanja);
 });
 
 // ZADATAK 4
@@ -138,33 +109,41 @@ app.get('/godine', (req, res) => {
     })
 });
 
-function createVjezbaZadatak(vjezba, zadatak, res) {
-    console.log('HERE', vjezba, zadatak)
-    VjezbaZadatak.create({
-        id_vjezba: vjezba,
-        id_zadatak: zadatak
-    }).then(data => {
-        res.redirect('/addVjezba.html');
+function createVjezbaGodina(vjezbaId, godinaId, res) {
+    console.log('HERE', vjezbaId, godinaId)
+    Vjezba.findByPk(vjezbaId).then(vjezba => {
+        vjezba.addGodine(godinaId).then(_ => {
+            res.redirect('/addVjezba.html');
+        }).catch(err => {
+            console.log("Greska pri dodavanju godina");
+            console.log(err);
+            res.redirect('/greska.html');
+        })
     }).catch(err => {
-        console.log(err)
+        console.log("Greska pri nalazenju vjezbe");
+        console.log(err);
         res.redirect('/greska.html');
-    })
+    });
 }
 
-app.post('/vjezba-zadatak', (req, res) => {
-    console.log(req.body)
+app.post('/addVjezba', (req, res) => {
+    console.log("Add vjezba");
     Vjezba.findOne({ where: { naziv: req.body.naziv } }).then(data => {
+        console.log("BODYYYY");
+        console.log(req.body);
         if (data === null) {
             Vjezba.create(req.body).then(createdVjezba => {
-                createVjezbaZadatak(createdVjezba.dataValues.id, req.body.zadatak, res)
+                createVjezbaGodina(createdVjezba.dataValues.id, req.body.godina, res)
             }).catch(err => {
+                console.log(err);
                 res.redirect('/greska.html');
             })
         } else {
-            createVjezbaZadatak(data.dataValues.id, req.body.zadatak, res)            
+            createVjezbaGodina(data.dataValues.id, req.body.godina, res)
         }
 
     }).catch(err => {
+        console.log(err);
         res.redirect('/greska.html');
     })
 });
@@ -192,44 +171,65 @@ var js2xmlparser = require("js2xmlparser");
 
 app.get('/zadaci', (req, res) => {
     let sviZadaci = [];
-    Zadatak.findAll().then(data => {
+    Zadatak.findAll({'include': 'vjezbe'}).then(data => {
         sviZadaci = data;
-    })
+        if (req.query['bez'] !== undefined) {
+            sviZadaci = data.filter((zadatak) => {
+                for (let godina of zadatak.vjezbe) {
+                    if (godina.id == req.query['bez']) {
+                        return false;
+                    }
+                }
+                return true;
+            })
+        }
+        sviZadaci = sviZadaci.map(zadatak => {
+            return {
+                postavka: zadatak.postavka,
+                naziv: zadatak.naziv,
+                id: zadatak.id
+            }
+        });
 
-    // acceptsMalim je niz svih u accepts headeru, pretvorene u mala slova
-    var acceptsMalim = req.accepts().map(elementNizaAccepts => {
-        console.log(elementNizaAccepts)
-        return elementNizaAccepts.toLowerCase();
+        // acceptsMalim je niz svih u accepts headeru, pretvorene u mala slova
+        var acceptsMalim = req.accepts().map(elementNizaAccepts => {
+            console.log(elementNizaAccepts)
+            return elementNizaAccepts.toLowerCase();
+        });
+
+        // Ako imamo application/json u ovom arrayu
+        if (acceptsMalim.indexOf('application/json') != -1) {
+            res.send(sviZadaci);
+            return;
+        }
+
+        // Ako imamo application/xml u ovom arrayu
+        if (acceptsMalim.indexOf('application/xml') != -1) {
+            for (let zadatak of sviZadaci) {
+                zadatak['='] = 'zadatak';
+            }
+            res.type('application/xml');
+            res.send(js2xmlparser.parse("zadaci", sviZadaci));
+            return;
+        }
+
+        // Ako imamo text/csv u ovom arrayu
+        if (acceptsMalim.indexOf('text/csv') != -1) {
+            var csv = "";
+            for (let zadatak of sviZadaci) {
+                csv += zadatak['naziv'] + ',' + zadatak['postavka'] + '\n';
+            }
+            res.type('text/csv');
+            res.send(csv);
+            return;
+        }
+
+        res.redirect('/greska.html');
     });
 
-    // Ako imamo application/json u ovom arrayu
-    if (acceptsMalim.indexOf('application/json') != -1) {
-        res.send(sviZadaci);
-        return;
-    }
-
-    // Ako imamo application/xml u ovom arrayu
-    if (acceptsMalim.indexOf('application/xml') != -1) {
-        for (let zadatak of sviZadaci) {
-            zadatak['='] = 'zadatak';
-        }
-        res.type('application/xml');
-        res.send(js2xmlparser.parse("zadaci", sviZadaci));
-        return;
-    }
-
-    // Ako imamo text/csv u ovom arrayu
-    if (acceptsMalim.indexOf('text/csv') != -1) {
-        var csv = "";
-        for (let zadatak of sviZadaci) {
-            csv += zadatak['naziv'] + ',' + zadatak['postavka'] + '\n';
-        }
-        res.type('text/csv');
-        res.send(csv);
-        return;
-    }
-
-    res.redirect('/greska.html');
+    // prije je ovaj ostatak koda bio ovdje, ali ovdje sviZadaci = [] jer se onaj
+    //   dio u then dijelu noije jos izvrsio. dio u then dijelu se izvrsi tek kada se
+    //   ova funkcija zavrsi
 });
 
 app.post('/student', (req, res) => {

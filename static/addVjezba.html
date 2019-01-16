@@ -42,7 +42,7 @@
 		</div>
 		<div id="sredina">
 			<div id="glavniSadrzaj">
-				<form id="fPostojeca" action="/godina-vjezba" method="POST">
+				<form id="fPostojeca" action="/addVjezba" method="POST">
 					<h2>Dodavanje postojeće vježbe/spirale</h2>
 					<label>Godina</label>
 					<select id="sGodine" name="godina" class="sGodine">
@@ -54,28 +54,26 @@
                     </select>   
 					<input type="submit" name="submit" value="Dodaj" class="dugme">
 				</form>
-				<form id="fNova" action="/vjezba-zadatak" method="POST">
+				<form id="fNova" action="/addVjezba" method="POST">
 					<h2>Nova vježba/spirala</h2>
                     <label>Naziv vježbe</label>
-					<input type="text" name="naziv" id="naziv" placeholder="Vjezba X" value="Vježba X" required>
+					<input type="text" name="naziv" id="naziv" value="Vježba X" required>
 					<label>Godina</label>
 					<select id="sGodine2" name="godina" class="sGodine">
-                       <!-- <option value="2018/19">2018/19</option> -->
-                    </select>
-                    <ul id="listZadaci">
-                    	<!-- <li>Zadatak 1</li>
-                    	<li>Zadatak 2</li>
-                    	<li>Zadatak 3</li> -->
-                    </ul>
-                    <select name="zadatak" id="sZadatak">
-                       <!-- <option value="ZadatakX">Zadatak X</option> -->
-					</select>   
-					<a href="addZadatak.html">
-						<input type="button" name="dZadatak" value="Dodaj zadatak" id="dZadatak">
-					</a>
 					<input type="checkbox" name="spirala" value="false" id="check">Spirala
 					<input type="submit" name="submit" value="Dodaj" class="dugme">
 				</form>
+
+				<form name="fPoveziZadatak" id="fPovezana" method="post">
+					<select name="sVjezbe" id="zadatakVjezbe" onchange="refreshZadatke()">
+						<!--<option value="Vjezba1"></option> -->
+					</select>
+					<select name="sZadatak" id="listZadaci">
+						
+					</select>
+					<input type="submit" name="dZadatak" id="dZadatak" value="Dodaj zadatak"> <!-- 2c -->
+				</form>
+
 			</div>
 		</div>
 		<div id="footer">

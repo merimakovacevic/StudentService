@@ -50,13 +50,13 @@ body{
 }
 
 #sredina{
-	height: 980px;
+	height: 1100px;
 	background-color: #dfdce2;
 }
 
 #sredina #glavniSadrzaj{
 	width: 85%;
-	height: 980px;
+	height: 1100px;
 	background-color:#e9e6ed;
 	margin: 0 auto;
 	padding:20px;
@@ -75,7 +75,7 @@ body{
 #sredina #glavniSadrzaj #fNova{
 	box-shadow: 5px 10px 8px #888888;
 	width: 450px;
-    height: 550px;
+    height: 450px;
     margin: auto;
 	background-color: #f6f2f9;
 	padding-top: 15px;
@@ -107,7 +107,7 @@ label{
 #sredina #glavniSadrzaj #fNova #naziv, #sredina #glavniSadrzaj #fNova .sGodine{
 	width: 250px;
 	height: 30px;
-	margin:0px 0px 20px 50px;
+	margin:0px 75px 20px 50px;
 }
 
 #sredina #glavniSadrzaj #fNova ul{
@@ -136,8 +136,10 @@ label{
 	margin:20px 50px 20px 20px;
 }
 
+
+
 #sredina #glavniSadrzaj #fNova #check{
-	margin:20px 15px 20px 50px;
+	margin:20px 25px 20px 50px;
 }
 
 #sredina #glavniSadrzaj #fNova .dugme{
@@ -145,6 +147,29 @@ label{
 	margin:20px 50px 20px 20px;
 	width: 150px;
 	height: 30px;
+}
+
+#sredina #glavniSadrzaj #fPovezana{
+	box-shadow: 5px 10px 8px #888888;
+	width: 450px;
+    height: 200px;
+    margin: auto;
+	background-color: #f6f2f9;
+	padding-top: 15px;
+}
+
+#sredina #glavniSadrzaj #fPovezana #sVjezbe, #sredina #glavniSadrzaj #fPovezana #sZadatak{
+    width: 250px;
+	height: 30px;
+	margin:0px 55px 20px 50px;
+}
+
+#sredina #glavniSadrzaj #fPovezana #dZadatak{
+	float: right;
+	margin:0px 35px 10px 20px;
+	width: 150px;
+	height: 30px;
+
 }
 
 #footer{
